@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    
+    {%include "navbar.html"%}
+    <div class="gird">
+    {%for x in vorur%}
+        <img src="{{x['mynd']}}" alt="{{x['nafn']}}">
+        <a href="/kaupa/{{x['nafn']}}">{{x['verd']}}</a>
+    {%endfor%}
+    {{len(karfa)}}
+    </div>
 </body>
 </html>
