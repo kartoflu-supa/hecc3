@@ -13,11 +13,16 @@ def error404(error):
 
 @app.route("/")
 def index():
-    return render_template("index.html", vorur = vorur, karfa = karfa)
+    return render_template("index.html", listi = vorur, karfa = karfa)
 
 @app.route("/kaupa/<nafn>")
 def kaupa(nafn):
     for x in vorur:
         if x['nafn'] == nafn:
             karfa.append(x)
-    return render_template("index.html", vorur = vorur, karfa = karfa)
+    return render_template("index.html", listi = vorur, karfa = karfa)
+
+@app.route("/taema")
+def taema():
+    karfa = []
+    return render_template("index.html", listi = vorur, karfa = karfa)
